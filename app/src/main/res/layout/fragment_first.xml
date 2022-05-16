@@ -28,6 +28,20 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/button_registro"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Registrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_first"
+        tools:ignore="MissingConstraints" />
+
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
@@ -67,33 +81,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="118dp"
         android:autoLink="email"
         android:gravity="center"
         android:padding="20px"
         android:text="@string/lostpassword"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_first" />
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:layout_editor_absoluteX="209dp" />
 
     <TextView
         android:id="@+id/registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:autoLink="web"
         android:gravity="center"
         android:padding="20px"
         android:text="@string/defaultpassword"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:layout_editor_absoluteX="111dp" />
 
     <ImageView
         android:id="@+id/imageView5"
