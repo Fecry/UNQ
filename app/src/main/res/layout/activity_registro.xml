@@ -15,11 +15,12 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="documento de identidad"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:hint="Identificación"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -39,10 +40,11 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Contraseña"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:hint="Contraseña"/>
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
@@ -53,13 +55,14 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Confirmar contraseña"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        android:hint="Confirmar contraseña"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_inicio2"
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_marginStart="32dp"

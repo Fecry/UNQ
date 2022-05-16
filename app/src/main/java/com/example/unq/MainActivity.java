@@ -18,11 +18,13 @@ import com.example.unq.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-
+import android.content.Intent;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    Button siguiente;
+    Button siguiente2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,20 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        siguiente = (Button) findViewById(R.id.button_registro);
+
+        siguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.button_registro:
+                        startActivity(new Intent(getApplicationContext(), Registro.class));
+                        break;
+                }
+
+            }
+        });
+
     }
 
     @Override
