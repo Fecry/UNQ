@@ -10,5 +10,5 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="unqlogo">UNQLogo</string>
-    <string name="lostpassword"><a href="mailto:support@cleverfinger.com.au?Subject=Lost%20Password" target="_top">¿Olvidaste la contraseña?</a></string> <string name="defaultpassword">¿No tienes cuenta?<a href="">Regístrate</a></string>
+    <string name="lostpassword"><a href="" target="_top">¿Olvidaste la contraseña?</a></string> <string name="defaultpassword">¿No tienes cuenta? <a href="">Regístrate</a></string>
 </resources>
