@@ -41,7 +41,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
             case R.id.eliminar_turno:
                 Toast toast1 = Toast.makeText(getApplicationContext(), "Esto debe cancelar turno", Toast.LENGTH_SHORT);
                 toast1.show();
-                startActivity(new Intent(this,MainActivity.class));
+                //startActivity(new Intent(this,MainActivity.class));
                 break;
         }
     }
