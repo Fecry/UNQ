@@ -1,68 +1,123 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package java_clases;
 
-/**
- *
- * @author julia
- */
+import java_clases.Usuario;
+
+
 @SuppressWarnings("unchecked")
-class DynamicArray<T> {
+public class DynamicArray<T> {
+
     T[] arr;
-    int size;
-    int capacity;
-    final int FACTOR_RESIZE =2;
-    public DynamicArray(){
-        this.arr=(T[]) new Object[this.FACTOR_RESIZE];
-        this.size=0;
-        this.capacity=this.FACTOR_RESIZE;
-        
+    private int size;
+    private int capacity;
+    private final int FACTOR_RESIZE = 2;
+
+    public DynamicArray() {
+        arr = (T[]) new Object[this.FACTOR_RESIZE];
+        size = 0;
+        capacity = this.FACTOR_RESIZE;
+
     }
-    
-    public T get(int i){
-        if(i<size)return this.arr[i];
-        return null;
+
+    public int size() {
+        return size;
     }
-    public void set(int i, T data){
-        if(i<size)this.arr[i]=data;
-        System.out.println("fuera de rango");
+
+    public T get(int i) {
+        if (i >= size) {
+            throw new IndexOutOfBoundsException("Indice invalido: " + i);
+        }
+        return arr[i];
     }
-    public void pushBack(T data){
-         if(size == capacity){
-            T[] aux = (T[]) new Object[capacity*FACTOR_RESIZE];
-            for(int i = 0; i < arr.length; i++)
+
+    public void set(int i, T data) {
+        if (i < size) {
+            this.arr[i] = data;
+        } else {
+            throw new IndexOutOfBoundsException("Indice invalido: " + i);
+        }
+    }
+
+    public void pushBack(T data) {
+        if (size == capacity) {
+            T[] aux = (T[]) new Object[capacity * FACTOR_RESIZE];
+            for (int i = 0; i < arr.length; i++) {
                 aux[i] = (T) arr[i];
+            }
             this.arr = aux;
             this.capacity *= FACTOR_RESIZE;
-        }//O(1)
+        }
         arr[size++] = data;
     }
-    public void remove(int i){
-        T[] aux = (T[]) new Object[capacity];
-        int cont=0;
-        for(int j = 0; j < arr.length; j++){
-            if(cont !=i){
-                aux[cont]= (T)arr[j];
-                cont++;
-            }            
+
+    public void clear() {
+    
+        this.arr=null;
+    }
+
+    public void remove(int i) {
+        if (i >= size) {
+            throw new IndexOutOfBoundsException("Indice invalido:" + i);
         }
-        this.arr=aux;
+
+        T[] aux = (T[]) new Object[capacity];
+        int cont = 0;
+        for (int j = 0; j < arr.length; j++) {
+            if (cont != i) {
+                aux[cont] = (T) arr[j];
+                cont++;
+            }
+        }
+        this.arr = aux;
         this.size--;
     }
 
-    public void print(){
+    public void removeLast() {
+        remove(size - 1);
+    }
+
+    public void print() {
         System.out.print("[");
-        for(int i=0; i<this.size-1;i++){
-            
-            System.out.print(this.arr[i]+", ");
+        
+        for (int i = 0; i < this.size-1; i++) {
+            System.out.print(arr[i] + ", ");
         }
-        System.out.print(this.arr[this.size-1]);
+        
+        System.out.print(arr[this.size]);
         System.out.print("]");
 
     }
-    
-    
-}
 
+    public void printDB(DynamicArray<Usuario> a) {
+        System.out.print("[");
+        
+        for (int i = 0; i < this.size-1; i++) {
+            System.out.print("[" +a.get(i).getId()+" "+a.get(i).getContrasena() +"]"+ ", ");
+        }
+        
+        System.out.print("[" +a.get(this.size-1).getId()+" "+a.get(this.size-1).getContrasena() +"]");
+        System.out.print("]");
+
+    }
+
+    public boolean isOriginal(Usuario temp, DynamicArray<Usuario> a) {
+        for(int i=0; i<a.size;i++){
+            
+            if(temp.getId().equals(a.get(i).getId())){
+                return false;
+            }
+        }
+        return true;
+        
+    }
+    
+    public boolean registro(Usuario temp, DynamicArray<Usuario> a) {
+        for(int i=0; i<a.size;i++){
+            
+            if(temp.getId().equals(a.get(i).getId()) &&temp.getContrasena().equals(a.get(i).getContrasena())){
+                return true;
+            }
+        }
+        return false;
+        
+    }
+}

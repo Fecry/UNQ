@@ -15,16 +15,20 @@
         tools:targetApi="31">
         <activity
             android:name=".TiempoEstimado"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".Cafeterias"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".Menu"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".Registro"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,15 +1,8 @@
-package java_clases;/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package java_clases;
 
-/**
- *
- * @author julia
- */
 public class DoubleLinkedList <T>{
-    Nodo<T> first;
-    Nodo<T> last;
+    java_clases.Nodo<T> first;
+    java_clases.Nodo<T> last;
     Integer count;
     public DoubleLinkedList(){
         makeEmpty();
@@ -26,6 +19,6 @@ public class DoubleLinkedList <T>{
             last=this.first;
         }
         this.first=begin;
-        count++;        
+        count++;
     }
 }
