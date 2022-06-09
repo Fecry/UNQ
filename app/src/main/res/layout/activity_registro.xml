@@ -74,7 +74,7 @@
 
 
     <Button
-        android:id="@+id/button_inicio2"
+        android:id="@+id/button_registro2"
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_marginStart="32dp"

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java_clases.Estructuras.Colas;
+
 public class Menu extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -24,6 +26,18 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
 
         Button eliminar_turno = findViewById(R.id.eliminar_turno);
         eliminar_turno.setOnClickListener(this);
+
+
+        Colas<Integer> central= new Colas<>();
+        Colas<Integer> biologia = new Colas<>();
+        Colas<Integer> yuTakeuchi = new Colas<>();
+        Colas<Integer> medicina = new Colas<>();
+        Colas<Integer> agronomia = new Colas<>();
+        Colas<Integer> hemeroteca = new Colas<>();
+        Colas<Integer> economia = new Colas<>();
+
+
+
 
     }
 
