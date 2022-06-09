@@ -1,5 +1,5 @@
 
-package main;
+package java_clases.main;
 
 public class Usuario {
     private String id;

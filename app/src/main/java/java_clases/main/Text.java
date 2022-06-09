@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main;
+package java_clases.main;
 
-import estructuras.DynamicArray;
+import java_clases.Estructuras.DynamicArray;
 import java.io.*;
 import java.util.Scanner;
 

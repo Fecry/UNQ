@@ -3,10 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package main;
+package java_clases.main;
 
-import estructuras.Pilas;
-import estructuras.DynamicArray;
+import java_clases.Estructuras.Pilas;
+import java_clases.Estructuras.DynamicArray;
 /**
  *
  * @author julia
