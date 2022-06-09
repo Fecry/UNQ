@@ -39,11 +39,11 @@ public class Proyecto_Estructuras {
         //menu.print();
         
 
-        
+/***
         new Interfaz1(BdD);
         BdD.printDB(BdD);
         xd.writeDB(BdD);
-        
+   */
 
          
        //xd.read();
