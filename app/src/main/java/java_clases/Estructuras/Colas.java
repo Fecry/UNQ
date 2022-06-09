@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package java_clases;
+package estructuras;
 
 /**
  *
@@ -60,16 +60,20 @@ public class Colas <T>{
         return null;
     }
 
-    public void tiempo(){
+    public String tiempo(){
         double t =this.count*10;
         if(t>59){
-            System.out.println("Tiempo estimado: "+(t/60)+" min");
+            String ti="Tiempo estimado: "+String.valueOf(t/60)+" min";
+            return ti;
+            
         }
         else if (t>3599){
-            System.out.println("Tiempo estimado: "+(t/3600)+" h");
+            String ti = "Tiempo estimado: "+String.valueOf(t/3600)+" h";
+            return ti;
         }
         else{
-            System.out.println("Tiempo estimado: "+t+" s");
+            String ti = "Tiempo estimado: "+String.valueOf(t)+" s";
+            return ti;
         }
 
     }

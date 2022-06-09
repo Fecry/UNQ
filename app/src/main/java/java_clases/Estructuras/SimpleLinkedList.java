@@ -2,31 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package java_clases;
+package estructuras;
 
 /**
  *
  * @author julia
  */
 public class SimpleLinkedList<T>{
-    Nodo<T> first;
-    Nodo<T> last;
-    Integer count;
+    private Nodo<T> head;
+    private Nodo<T> tail;
+    private Integer size;
 
-    public Nodo<T> Head() {
-        return first;
+    public Nodo<T> first() {
+        return head;
     }
 
-    public Nodo<T> Tail() {
-        return last;
+    public Nodo<T> last() {
+        return tail;
     }
 
-    public Integer getCount() {
-        return count;
+    public Integer getSize() {
+        return size;
     }
     
-    public boolean IsEmpty(){
-        return count==0;
+    public boolean isEmpty(){
+        return size==0;
     }
     
     public SimpleLinkedList(){
@@ -46,63 +46,63 @@ public class SimpleLinkedList<T>{
     }
 
     public void makeEmpty(){
-        this.count=0;
-        this.first=null;
-        this.last=null;
+        size = 0;
+        head = null;
+        tail = null;
     } 
     
     public void InsertarInicio(T insertar){
         Nodo<T> nuevoNodo = new Nodo<T>(insertar);
-        nuevoNodo.siguiente= this.first;
-        this.first= nuevoNodo;
-        if(count==0) this.last=nuevoNodo;
-        count++;
+        nuevoNodo.siguiente = this.head;
+        this.head = nuevoNodo;
+        if(size == 0) this.tail = nuevoNodo;
+        size++;
     }    
     
     public void BorrarInicio(){
-        if(this.first==null){
+        if(this.head == null){
             System.err.println("Error, lista vacia");
         }else{
-            this.first=this.first.siguiente;
-            this.count--;
-            if(this.first==null)this.makeEmpty();
+            this.head = this.head.siguiente;
+            this.size--;
+            if(this.head == null)this.makeEmpty();
         }
     }
     
     public void InsertarFinal(T toInsert){
         Nodo<T> newNodo = new Nodo<>(toInsert);
-        if(this.last==null){
+        if(this.tail == null){
            this.InsertarInicio(toInsert);
         }else{
-            this.last.siguiente = newNodo;
-            newNodo.anterior = this.last;
-            this.last = newNodo;
-            this.count++;
+            this.tail.siguiente = newNodo;
+            newNodo.anterior = this.tail;
+            this.tail = newNodo;
+            this.size++;
         }
     }
     
     public void BorrarFinal(){
-        if(this.last==null){
+        if(this.tail == null){
             System.err.println("Error, lista vacia");
         }else{
-            this.last=this.last.anterior;
-            this.last.siguiente=null;
-            this.count--;
-            if(this.last==null)this.makeEmpty();
+            this.tail = this.tail.anterior;
+            this.tail.siguiente=null;
+            this.size--;
+            if(this.tail==null)this.makeEmpty();
         }
     }
     
     boolean checkarIndice(int k){
-        return k < 0 || k > this.count;
+        return k < 0 || k > this.size;
     }
     
     public Integer findFirst(T data){   
         
-        if(count==0){
+        if(size==0){
             System.err.println("Error, lista vacia");
             return -1;
         }
-        Nodo<T> aux = this.first;
+        Nodo<T> aux = this.head;
         Integer index = 0;
         while(aux!= null){
             if(data.equals(aux.data)){
@@ -117,13 +117,13 @@ public class SimpleLinkedList<T>{
     
     public int[] findAll(T data){     
         
-        if(count==0){
+        if(size==0){
             System.err.println("Error, lista vacia");
             return null;
         }
-        int[] indexes = new int[this.getCount()];
+        int[] indexes = new int[this.getSize()];
         int conteo = 0;        
-        Nodo<T> aux = this.first;
+        Nodo<T> aux = this.head;
         Integer index = 0;
         while(aux!= null){
             if(data.equals(aux.data)){
@@ -147,11 +147,11 @@ public class SimpleLinkedList<T>{
     }
     
     private Nodo<T> read(int k){
-        if(k < 0 || k >= this.count){
+        if(k < 0 || k >= this.size){
             System.out.println("No es posible realizar la búsqueda");
             return null;
         }
-        Nodo<T> aux = this.first;
+        Nodo<T> aux = this.head;
         for(int i = 0; i < k; i++)
             aux = aux.siguiente;
         return aux;
@@ -177,7 +177,7 @@ public class SimpleLinkedList<T>{
         Nodo<T> nuevoNodo = new Nodo<>(data), aux = this.read(k-1);
         nuevoNodo.siguiente = aux.siguiente;
         aux.siguiente = nuevoNodo;
-        this.count++;        
+        this.size++;        
     }
     
     public void eliminar(int k){ //orden de big O ==>  O(N)
@@ -197,7 +197,7 @@ public class SimpleLinkedList<T>{
     public String toString(){
         StringBuilder strbldr = new StringBuilder();
         strbldr.append("[");
-        Nodo<T> auxiliar = this.first;
+        Nodo<T> auxiliar = this.head;
         while(auxiliar != null){
             strbldr.append(auxiliar.getData());
             strbldr.append(", ");
