@@ -11,20 +11,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:theme="@style/Theme.UNQ.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".TiempoEstimado"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".Cafeterias"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".Menu"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".Registro"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.UNQ.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
