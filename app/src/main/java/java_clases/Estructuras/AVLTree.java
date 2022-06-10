@@ -1,5 +1,6 @@
-package universidad_nacional_de_colombia.proyecto_estructuras;
+package java_clases.Estructuras;
 
+//import java_clases.main.Usuario;
 // Java program for insertion in AVL Tree
 class Node {
 	int key, height;
@@ -127,33 +128,9 @@ class AVLTree {
 			System.out.print(node.key + " ");
 			preOrder(node.left);
 			preOrder(node.right);
+			//tree.root = tree.insert(tree.root, temp.id);
+			//tree.preOrder(tree.root);
 		}
-	}
-
-	public static void main(String[] args) {
-		AVLTree tree = new AVLTree();
-                System.out.println ("testcomplejidad");
-                int doc;
-                String ctr;
-                int i,j;
-                DynamicArray<Usuario> prueba1= new DynamicArray<>();
-                long startTime = System.currentTimeMillis();
-                for ( i = 0; i < 100; i++){
-                j=i+5;
-                ctr = String.valueOf(j);
-                doc = i;
-                Usuario temp = new Usuario( doc, ctr);
-                prueba1.pushBack(temp);
-                tree.root = tree.insert(tree.root, temp.id);
-     }
-     long endTime = (System.currentTimeMillis()- startTime);
-    //imprime tiempo transcurrido en ms
-     System.out.println("Duración " + endTime + "milisegundos.");
-
-		
-		System.out.println("Preorder traversal" +
-						" of constructed tree is : ");
-		tree.preOrder(tree.root);
 	}
 }
 

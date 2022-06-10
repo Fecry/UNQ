@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package java_clases.main;
 
 import java_clases.Estructuras.Pilas;
 import java_clases.Estructuras.DynamicArray;
-/**
- *
- * @author julia
- */
+
 public class Proyecto_Estructuras {
 
     public static void main(String[] args) {

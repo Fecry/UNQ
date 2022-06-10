@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package java_clases.main;
 
 import java_clases.Estructuras.DynamicArray;
 import java.io.*;
 import java.util.Scanner;
 
-/**
- *
- * @author julia
- */
 public class Text {
   private File file = new File("BasedeDatos.txt");
     

@@ -23,6 +23,10 @@
     <string name="hemeroteca">Cafetería Hemeroteca</string>
     <string name="economia">Cafetería Economía</string>
     <string name="cancelar">Cancelar</string>
+    <string name="cancelar_turno">Cancelar Turno</string>
+    <string name="esperando">Esperando turno para</string>
+    <string name="tiempoesde">El tiempo de espera estimado es de:</string>
+
 
     <string name="lostpassword"><a href="" target="_top">¿Olvidaste la contraseña?</a></string>
     <string name="defaultpassword">¿No tienes cuenta? <a href="">Regístrate</a></string>

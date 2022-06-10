@@ -32,7 +32,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 String doc="";
                 String ctr="";
                 String ctrC="";
-                boolean seguir=false;
                 EditText documento = findViewById(R.id.identificacion_registro);
                 EditText contrasena = findViewById(R.id.contrasena_registro);
                 EditText conf_contrasena = findViewById(R.id.confirmar_contrasena_registro);
@@ -51,7 +50,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                         Usuario us1= temp;
                         Toast toast0 = Toast.makeText(getApplicationContext(), "Usuario Creado", Toast.LENGTH_SHORT);
                         toast0.show();
-                        seguir=true;
+                        finish();
 
                     }
 
