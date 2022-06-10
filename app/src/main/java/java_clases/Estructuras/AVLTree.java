@@ -150,20 +150,10 @@ class AVLTree {
     //imprime tiempo transcurrido en ms
      System.out.println("Duración " + endTime + "milisegundos.");
 
-		/* Constructing tree given in the above figure */
 		
-		
-
-		/* The constructed AVL Tree would be
-			30
-			/ \
-		20 40
-		/ \	 \
-		10 25 50
-		*/
 		System.out.println("Preorder traversal" +
 						" of constructed tree is : ");
 		tree.preOrder(tree.root);
 	}
 }
-// This code has been contributed by Mayank Jaiswal
+
