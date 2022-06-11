@@ -37,11 +37,6 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         eliminar_turno.setOnClickListener(this);
 
 
-
-
-
-
-
     }
 
 
@@ -50,14 +45,24 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()){
             case R.id.turno_rapido:
                 int [] cafeterias = new int[] {central.getCount(),biologia.getCount(),yuTakeuchi.getCount(),medicina.getCount(),agronomia.getCount(),economia.getCount()};
-                int min = cafeterias[0];
+
+                for(int j = 0; j < cafeterias.length; j++){
+                    System.out.println(cafeterias[j]);
+                }
+
+                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + cafeterias.toString());
+                int min = 0;
+
+                System.out.println("EEEEEEEEEEEEEEEEEEEEEEEE" + min);
+
                 int cafeteria_escogida = 0;
                 String nombre;
 
                 for(int i = 0; i < cafeterias.length; i++){
-                    if(cafeterias[i] < min){
+                    if(cafeterias[i] > min){
                         min = cafeterias[i];
                         cafeteria_escogida = i;
+                        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOO" + cafeteria_escogida);
                     }
                 }
                 switch (cafeteria_escogida){

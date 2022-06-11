@@ -74,7 +74,7 @@ public class Colas <T>{
     }
 
     public String tiempo() {
-        int t = this.count * 60;
+        int t = this.count * 300;
         if (t > 59) {
             String ti = String.valueOf(t / 60) + " min";
             return ti;
