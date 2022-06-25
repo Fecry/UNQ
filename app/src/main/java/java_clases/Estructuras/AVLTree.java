@@ -15,7 +15,7 @@ class Node
 	}
 }
 
-class AVLTree
+public class AVLTree
 {
  
 	Node root;
