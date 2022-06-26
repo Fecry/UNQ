@@ -3,10 +3,8 @@ package java_clases.Estructuras;
 
 public class testAVL {
 
-    public static void main(String[] args) 
-       
-	{
-		AVLTree tree = new AVLTree();
+    public static void main(String[] args) {
+		/*AVLTree tree = new AVLTree();
                 Text_1 pruebaAVL = new Text_1();
     	        pruebaAVL.writeFile ("TEST DE COMPLEJIDAD PARA ARBOL AVL");
                 pruebaAVL.writeFile("------------------------------------------------------------");
@@ -60,6 +58,7 @@ public class testAVL {
          
               
         }
- } // TODO code application logic here
+ } // TODO code application logic here*/
     }
+}
     
