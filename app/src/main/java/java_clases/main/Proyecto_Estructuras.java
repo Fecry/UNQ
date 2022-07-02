@@ -15,7 +15,7 @@ public class Proyecto_Estructuras {
 
         //Llenar la base de Datos
         Text xd = new Text();
-        xd.populateDB(BdD);
+        //xd.populateDB(BdD);
 
         //menu
 

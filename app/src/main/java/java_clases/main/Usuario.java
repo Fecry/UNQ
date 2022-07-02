@@ -1,7 +1,9 @@
 
 package java_clases.main;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario  implements Serializable {
     private String id;
     private String contrasena;
 

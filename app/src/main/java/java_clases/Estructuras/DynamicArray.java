@@ -1,9 +1,11 @@
 package java_clases.Estructuras;
 
+import java.io.Serializable;
+
 import java_clases.main.Usuario;
 
 @SuppressWarnings("unchecked")
-public class DynamicArray<T> {
+public class DynamicArray<T> implements Serializable {
 
     T[] arr;
     private int size;

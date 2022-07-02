@@ -1,5 +1,7 @@
 package java_clases.main;
 
+import android.content.Context;
+
 import java_clases.Estructuras.DynamicArray;
 import java.io.*;
 import java.util.Scanner;
@@ -19,10 +21,10 @@ public class Text {
     }
     }
 
-    public void populateDB(DynamicArray<Usuario> a) {
+    public void populateDB(DynamicArray<Usuario> a, Context context) {
           try {
-            Scanner myReader = new Scanner(file);
-            
+            Scanner myReader = new Scanner(new InputStreamReader(context.openFileInput("BasedeDatos.txt")));
+
             while (myReader.hasNextLine()) {
               Usuario Us = new Usuario ("","");
               String id = myReader.nextLine();
@@ -51,33 +53,28 @@ public class Text {
         }
     }
     
-    public void writeDB(DynamicArray<Usuario> DB){
+    public void writeDB(DynamicArray<Usuario> DB, Context context){
         String id;
         String contrasena;
-        clear();
         for(int i =0; i < DB.size(); i++){
 
             id=DB.get(i).getId();
             contrasena=DB.get(i).getContrasena();
 
-            writeFile(id);
-            writeFile(contrasena);
+            writeFile(id, context);
+            writeFile(contrasena, context);
 
-        }    
+        }
 
     }
     
-    public void writeFile(String s){
-        BufferedWriter out = null;
+    public void writeFile(String s, Context context){
 		try {
-			
-			out = new BufferedWriter(new FileWriter(this.file, true));
-			//for (String s : list) {
-				out.write(s);
-				out.newLine();
-
-			//}
-			out.close();
+			PrintWriter writer = new PrintWriter(new OutputStreamWriter(context.openFileOutput("BasedeDatos.txt", Context.MODE_PRIVATE)));
+            writer.write(s);
+            writer.println();
+            writer.flush();
+			writer.close();
 		} catch (IOException e) {
 		}
     }

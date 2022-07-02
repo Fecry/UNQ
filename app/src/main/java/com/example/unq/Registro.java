@@ -10,10 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java_clases.Estructuras.DynamicArray;
+import java_clases.main.Serializacion;
 import java_clases.main.Usuario;
+import java_clases.main.Text;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener {
-    public static DynamicArray<Usuario> BdD = new DynamicArray<>();
+    public static DynamicArray<Usuario> BdD = MainActivity.BdD;
+    public static Serializacion serializacion = MainActivity.serializacion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +25,21 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
         Button registrarse2 = findViewById(R.id.button_registro2);
         registrarse2.setOnClickListener(this);
+        serializacion.deserializar(getApplicationContext());
+    }
 
+    public void onStart(){
+        super.onStart();
+        serializacion.deserializar(getApplicationContext());
+    }
+    public void onPause() {
+        super.onPause();
+        serializacion.serializar(getApplicationContext());
+    }
 
-
+    public void onStop(){
+        super.onStop();
+        serializacion.serializar(getApplicationContext());
     }
     @Override
     public void onClick(View view) {

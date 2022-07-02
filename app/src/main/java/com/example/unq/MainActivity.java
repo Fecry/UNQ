@@ -2,6 +2,7 @@ package com.example.unq;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +13,14 @@ import android.widget.Toast;
 import java_clases.Estructuras.DynamicArray;
 
 import java_clases.main.Usuario;
+import java_clases.main.Text;
+import java_clases.main.Serializacion;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public static Usuario us1 = new Usuario("", "");;
+    public static Usuario us1 = new Usuario("", "");
+    public static Serializacion serializacion = new Serializacion();
+    public static DynamicArray<Usuario> BdD;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,14 +34,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button registrarse = findViewById(R.id.button_registro);
         registrarse.setOnClickListener(this);
 
+        BdD = new DynamicArray<>();
+
+        serializacion.deserializar(getApplicationContext());
     }
+
+    public void onStart() {
+        super.onStart();
+        serializacion.deserializar(getApplicationContext());
+    }
+
+    public void onResume(){
+        super.onResume();
+        serializacion.deserializar(getApplicationContext());
+    }
+
         @Override
         public void onClick (View view){
-            DynamicArray<Usuario> BdD = Registro.BdD;
+
             switch (view.getId()) {
                 case R.id.iniciar_sesion:
-
-
                     //boolean seguir = false;
 
                     EditText documento = findViewById(R.id.identificacion_iniciar_sesion);
@@ -64,8 +81,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(new Intent(this, Registro.class));
                     break;
 
-
             }
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            serializacion.serializar(getApplicationContext());
         }
     }
 
